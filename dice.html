@@ -1,0 +1,127 @@
+	
+		
+<!DOCTYPE html>
+		
+		
+<html>
+	
+<head>
+	
+	<title> --- Dice Game --- </title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<style type="text/css">
+		.hi{
+			background-color:#00FAFF;
+		}
+		.texter{
+			font-family:cursive;
+		}
+</style>
+
+</head>
+
+
+<body onload="changeimage()" class="hi">
+
+
+<div class="container-fluid ">
+		
+		<div class="row ">
+
+			<div class="col-12 text-center display-1 ">
+				<div id="heading" class="texter">Restart</div>
+			</div>
+
+		
+</div>
+<hr>	
+<div class="row  align-items-center justify-content-center">
+
+			<div class="col-xxl-4  col-xl-4  col-lg-4 col-md-4 col-sm-12  text-center">
+				
+				<h3 class="display-4 texter">Player-1</h3>
+				<br>
+				<img src="./images/dice1.png" id = "img1" class="img-fluid img11">
+			
+			</div>
+
+		<div class="col-xxl-4  col-xl-4  col-lg-4 col-md-4 col-sm-12  text-center">
+			
+				<h3 class="display-4 texter">Player-2</h3>
+				<br>
+				<img src="./images/dice2.png" id= "img2" class="img-fluid img11">
+			</div>
+		
+	</div>
+
+	<div class="row justify-content-center align-items-end">
+		
+		<div class="col-xxl-4 col-sm-12 text-center">
+				<button onclick = "restart()" class="btn btn-danger texter btn-xxl"> Restart </button>
+		</div>
+
+	</div>
+
+
+</div>
+
+
+<blockquote class="blockquote ">
+	
+	<p class="text-center display-4" style="font-family:monospace;">Luck is Always Matter a Lot ! </p>
+	
+	<footer class="blockquote-footer text-end">
+		Dice Game by Vishnu Kumar .  
+	</footer>
+	
+</blockquote>
+
+<script type="text/javascript">
+	
+
+function changeimage()
+		{
+		
+		let num1 = Math.floor(Math.random() * 10) % 6;
+	
+		let num2 = Math.floor(Math.random() * 10) % 6;
+		
+		
+		if ( num1 > num2 )
+		{
+			document.getElementById('heading').innerHTML = "Player-1 Wins";
+		}
+		else if(num1 < num2)
+		{
+			document.getElementById('heading').innerHTML = "Player-2 Wins";
+		}
+		else if(num1 === num2 )
+		{
+			document.getElementById('heading').innerHTML = "Match Draw";
+		}
+		
+		document.getElementById("img1").setAttribute("src","./images/dice"+(num1+1)+".png");
+
+		document.getElementById("img2").setAttribute("src","./images/dice"+(num2+1)+".png");
+
+		}			
+function restart()
+		{
+		
+			document.getElementById('heading').innerHTML = "Refresh";
+		
+		document.getElementById("img1").setAttribute("src","./images/dice"+(num1+1)+".png");
+
+		document.getElementById("img2").setAttribute("src","./images/dice"+(num2+1)+".png");
+
+		}			
+		
+</script>
+
+
+
+</body>
+
+</html>
