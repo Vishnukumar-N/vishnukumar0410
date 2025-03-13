@@ -1,4 +1,4 @@
-    <script>
+
         const skills = [
             { name: "KAFKA", rating: 5 },
             { name: "PYSPARK", rating: 5 },
@@ -32,4 +32,3 @@
             div.innerHTML = <h3>${project.name}</h3><p>${project.description}</p>;
             projectsContainer.appendChild(div);
         });
-    </script>
